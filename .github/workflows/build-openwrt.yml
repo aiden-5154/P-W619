@@ -100,7 +100,7 @@ jobs:
         find dl -size -1024c -exec rm -f {} \;
 
     - name: Compile the toolchain
-      id: compile
+      id: compile1
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
@@ -111,7 +111,7 @@ jobs:
         echo "::set-env name=FILE_DATE::_$(date +"%Y%m%d%H%M")"
   
     - name: Compile the sx
-      id: compile
+      id: compile2
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
